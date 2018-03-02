@@ -1,22 +1,5 @@
 package projecteulergo
 
-import "math"
-
-func isPrime(primes []int, x int) bool {
-	for _, prime := range primes {
-		if float64(prime) > math.Sqrt(float64(x))+0.0001 { // Floating point weirdness
-			break
-		} else if x%prime == 0 {
-
-			// Found a prime factor
-			return false
-		}
-	}
-
-	// No prime factors - must be a new prime
-	return true
-}
-
 // Problem7 - 10001st prime
 func Problem7(n int) int {
 	var primes []int
